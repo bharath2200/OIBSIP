@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Bharath.</a>
+
+        <nav class="navbar" id="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Service</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <h1>Hi, I'm Bharath Marupaka</h1>
+            <h3>Web Developer</h3>
+            <p>I am a Web Developer with experience in building responsive, modern, and user-friendly websites.
+                Skilled in creating fast and visually appealing web applications with clean UI and smooth functionality.
+                Passionate about turning creative ideas into real-world digital experiences using the latest web
+                technologies.</p>
+            <div class="btn-box">
+                <a href="contact.html" class="btn">Hire Me</a>
+                <a href="contact.html" class="btn">Let's Talk</a>
+            </div>
+        </div>
+
+        <div class="home-sci">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+        <div class="home-imgHover"></div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navbar').classList.toggle('open');
+            document.getElementById('menuIcon').classList.toggle('open');
+        }
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navbar').classList.remove('open');
+                document.getElementById('menuIcon').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
