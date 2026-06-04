@@ -16,10 +16,8 @@ export class NotesModule {
     init() {
         if (!this.notesContainer) return;
 
-        // Render initially
         this.render();
 
-        // Listen for new notes
         this.notesAddBtn.addEventListener('click', () => this.addNote());
     }
 
@@ -100,13 +98,11 @@ export class NotesModule {
                 </div>
             `;
 
-            // Bind text editing
             const textarea = card.querySelector('.note-textarea');
             textarea.addEventListener('input', (e) => {
                 this.updateNote(note.id, e.target.value);
             });
 
-            // Bind color switcher
             const dots = card.querySelectorAll('.color-dot');
             dots.forEach(dot => {
                 dot.addEventListener('click', () => {
@@ -115,7 +111,6 @@ export class NotesModule {
                 });
             });
 
-            // Bind delete button
             const deleteBtn = card.querySelector('.note-delete');
             deleteBtn.addEventListener('click', () => this.deleteNote(note.id));
 
