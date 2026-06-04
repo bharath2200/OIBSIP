@@ -26,19 +26,13 @@ export class QuotesModule {
 
     init() {
         if (!this.quoteText) return;
-
-        // Display a random quote initially
         this.displayNewQuote();
-
-        // Listen for clicks
         this.newQuoteBtn.addEventListener('click', () => {
-            // Apply fade-out
             this.quoteText.style.opacity = '0';
             this.quoteAuthor.style.opacity = '0';
             
             setTimeout(() => {
                 this.displayNewQuote();
-                // Apply fade-in
                 this.quoteText.style.opacity = '1';
                 this.quoteAuthor.style.opacity = '1';
             }, 300);
