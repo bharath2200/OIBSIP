@@ -1,6 +1,4 @@
 import { Storage } from '../utils/storage.js';
-
-// Map WMO weather codes to descriptive text and beautiful Font Awesome icons
 const WMO_METADATA = {
     0: { text: 'Clear Skies', icon: 'fa-sun', color: '#ffbd2e' },
     1: { text: 'Mostly Clear', icon: 'fa-cloud-sun', color: '#ffd073' },
@@ -42,13 +40,11 @@ export class WeatherModule {
     async init() {
         if (!this.tempDisplay) return;
 
-        // Bind events
         this.searchBtn.addEventListener('click', () => this.searchCity());
         this.searchInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.searchCity();
         });
 
-        // Load weather by geolocation or fall back to last city
         this.loadInitialWeather();
     }
 
