@@ -6,29 +6,25 @@ export class AnalyticsModule {
         this.hoursChart = null;
         this.habitsChart = null;
 
-        // Initialize focus analytics database in LocalStorage
-        const defaultFocusData = [2.0, 3.5, 1.5, 4.0, 2.5, 1.0, 0.5]; // Mon - Sun in hours
+        const defaultFocusData = [2.0, 3.5, 1.5, 4.0, 2.5, 1.0, 0.5]; 
         this.focusData = Storage.get('analytics_focus', defaultFocusData);
         
-        const defaultTasksData = [3, 5, 2, 6, 4, 1, 2]; // Mon - Sun completed tasks count
+        const defaultTasksData = [3, 5, 2, 6, 4, 1, 2]; 
         this.tasksData = Storage.get('analytics_tasks', defaultTasksData);
 
         this.init();
     }
 
     init() {
-        // Listen for updates from other modules
         document.addEventListener('habitsUpdated', () => this.updateHabitsChart());
         document.addEventListener('taskCompleted', () => this.incrementCompletedTasks());
         document.addEventListener('focusSessionCompleted', () => this.incrementFocusHours());
 
-        // Render charts once the panel is active/visible
         this.renderCharts();
     }
 
     incrementCompletedTasks() {
-        const todayIndex = new Date().getDay(); // 0 (Sun) - 6 (Sat)
-        // Convert to Mon=0 ... Sun=6
+        const todayIndex = new Date().getDay();
         const adjustedIndex = todayIndex === 0 ? 6 : todayIndex - 1;
         
         this.tasksData[adjustedIndex]++;
@@ -41,7 +37,6 @@ export class AnalyticsModule {
         const todayIndex = new Date().getDay();
         const adjustedIndex = todayIndex === 0 ? 6 : todayIndex - 1;
 
-        // Add 25 minutes of focus session (0.41 hours)
         this.focusData[adjustedIndex] = parseFloat((this.focusData[adjustedIndex] + 0.41).toFixed(2));
         Storage.set('analytics_focus', this.focusData);
 
@@ -135,7 +130,6 @@ export class AnalyticsModule {
         const ctx = document.getElementById('analytics-habits-chart');
         if (!ctx) return;
 
-        // Calculate checked days out of 7 for each habit
         const habits = Storage.get('habits', {});
         const habitLabels = [];
         const habitCompletionData = [];
