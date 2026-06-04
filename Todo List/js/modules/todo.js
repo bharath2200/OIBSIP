@@ -21,10 +21,8 @@ export class TodoModule {
     init() {
         if (!this.todoListContainer) return;
 
-        // Render initially
         this.render();
 
-        // Listen for additions
         this.todoAddBtn.addEventListener('click', () => this.addTask());
         this.todoInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.addTask();
@@ -105,11 +103,9 @@ export class TodoModule {
                 </div>
             `;
 
-            // Bind check box change
             const checkbox = li.querySelector('input[type="checkbox"]');
             checkbox.addEventListener('change', () => this.toggleTask(task.id));
 
-            // Bind delete button
             const deleteBtn = li.querySelector('.todo-delete-btn');
             deleteBtn.addEventListener('click', () => this.deleteTask(task.id));
 
