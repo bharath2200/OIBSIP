@@ -1,8 +1,3 @@
-/* 
- * FlowState — Master CSS Coordinator
- * Styled with authentic GitHub-inspired aesthetic tokens
- */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
 @import url('layouts/grid.css');
 @import url('components/todo.css');
@@ -10,13 +5,11 @@
 @import url('components/notes.css');
 @import url('components/widgets.css');
 
-/* CSS VARIABLES FOR THEMES */
+
 :root, [data-theme="github-dark"] {
-    /* Fonts */
     --font-header: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-    /* Theme Variables - GitHub Dark Mode */
     --bg-canvas: #0d1117;
     --bg-card: #161b22;
     --bg-card-hover: #1f242c;
@@ -39,11 +32,10 @@
 
     --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    --border-radius: 8px; /* Classic GitHub angular rounding */
+    --border-radius: 8px;
 }
 
 [data-theme="github-light"] {
-    /* Theme Variables - GitHub Light Mode */
     --bg-canvas: #f6f8fa;
     --bg-card: #ffffff;
     --bg-card-hover: #fcfcfc;
@@ -67,7 +59,6 @@
     --card-shadow: 0 4px 12px rgba(140, 149, 159, 0.12);
 }
 
-/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -89,7 +80,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
 }
 
-/* Scrollbar Customization */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
