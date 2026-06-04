@@ -1,17 +1,9 @@
-/* 
- * FlowState — Master Layout & View Routing CSS
- */
-
-/* App Shell Flex Layout */
 .app-layout {
     display: flex;
     min-height: 100vh;
     overflow: hidden;
 }
 
-/* ==========================================
-   RESPONSIVE LEFT SIDEBAR
-   ========================================== */
 .dashboard-sidebar {
     width: 260px;
     background-color: var(--bg-card);
@@ -54,7 +46,7 @@
     border-radius: 4px;
     transition: var(--transition);
     border: 1px solid transparent;
-    display: none; /* Shows on tablet/mobile */
+    display: none; 
 }
 
 .sidebar-collapse-btn:hover {
@@ -63,7 +55,6 @@
     background-color: var(--bg-canvas);
 }
 
-/* Sidebar Menu Navigation Links */
 .sidebar-menu {
     list-style: none;
     padding: 1.25rem 0.75rem;
@@ -99,7 +90,6 @@
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
-/* Sidebar Footer (Developer Profile badge) */
 .sidebar-footer {
     padding: 1rem;
     border-top: 1px solid var(--border-color);
@@ -128,9 +118,6 @@
     font-size: 0.85rem;
 }
 
-/* ==========================================
-   MAIN VIEWPORT WINDOW
-   ========================================== */
 .main-content {
     flex-grow: 1;
     height: 100vh;
@@ -140,7 +127,6 @@
     flex-direction: column;
 }
 
-/* Top App Bar Actions */
 .main-header {
     background-color: var(--bg-card);
     border-bottom: 1px solid var(--border-color);
@@ -164,7 +150,6 @@
     gap: 0.75rem;
 }
 
-/* Command Palette trigger button display */
 .palette-trigger-btn {
     display: flex;
     align-items: center;
@@ -194,9 +179,6 @@
     font-weight: 600;
 }
 
-/* ==========================================
-   DYNAMIC PANELS ROUTING
-   ========================================== */
 .dashboard-panel {
     display: none;
     padding: 2rem;
@@ -217,7 +199,6 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Cards Wrapper System */
 .card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -259,7 +240,6 @@
     color: var(--text-secondary);
 }
 
-/* Home Overview Stats Panel Rows */
 .stats-summary-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -324,9 +304,6 @@
     align-items: start;
 }
 
-/* ==========================================
-   GLASSMORPHIC COMMAND PALETTE (CTRL + K)
-   ========================================== */
 .palette-overlay {
     position: fixed;
     top: 0;
@@ -441,9 +418,6 @@
     font-size: 0.85rem;
 }
 
-/* ==========================================
-   TABLET & MOBILE RESPONSIVE MEDIA QUERIES
-   ========================================== */
 @media (max-width: 992px) {
     .home-subgrid {
         grid-template-columns: 1fr;
@@ -471,11 +445,10 @@
     }
     
     .sidebar-menu {
-        display: none; /* Collapse menu by default */
+        display: none; 
         padding: 0.5rem 1rem 1rem 1rem;
     }
     
-    /* Toggle active open state in mobile */
     .dashboard-sidebar.collapsed .sidebar-menu {
         display: flex;
     }
