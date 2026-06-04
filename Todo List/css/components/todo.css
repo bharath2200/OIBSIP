@@ -1,8 +1,4 @@
-/* 
- * FlowState — To-Do Component Styles
- */
 
-/* Input Form Controls */
 .todo-input-group {
     display: flex;
     gap: 0.5rem;
@@ -58,7 +54,6 @@
     background-color: var(--accent-green-hover);
 }
 
-/* Tasks list container */
 .todo-list {
     list-style: none;
     display: flex;
@@ -114,7 +109,6 @@
     word-break: break-word;
 }
 
-/* Custom Checkbox Widget */
 .custom-checkbox {
     display: block;
     position: relative;
@@ -173,7 +167,6 @@
     transform: rotate(45deg);
 }
 
-/* Priority/Category Tag Badges */
 .todo-tag {
     font-size: 0.7rem;
     padding: 0.15rem 0.5rem;
@@ -201,7 +194,6 @@
     border: 1px solid rgba(248, 81, 73, 0.2);
 }
 
-/* Delete Button */
 .todo-delete-btn {
     background: transparent;
     color: var(--text-muted);
@@ -217,7 +209,6 @@
     background-color: rgba(248, 81, 73, 0.08);
 }
 
-/* Stats counter */
 .todo-stats {
     font-size: 0.8rem;
     color: var(--text-secondary);
