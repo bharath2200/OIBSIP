@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Bharath Marupaka</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Bharath.</a>
+
+        <nav class="navbar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Service</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+
+        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <section class="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <i class='bx bx-map'></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Hyderabad, Telangana, India</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class='bx bx-envelope'></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>marupakabharath216@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class='bx bx-phone'></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+91 7330750100</p>
+                    </div>
+                </div>
+
+                <div class="contact-social">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <input type="text" id="subject" placeholder="Subject" required>
+                <textarea id="message" rows="7" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn-submit">
+                    Send Message <i class='bx bx-send'></i>
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappMessage = `*New Contact Form Message*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
+            const whatsappNumber = "917330750100"; 
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+            window.open(whatsappURL, '_blank');
+
+            const btn = this.querySelector('.btn-submit');
+            btn.textContent = 'Redirecting to WhatsApp...';
+            btn.style.background = '#25D366';
+            btn.style.borderColor = '#25D366';
+            
+            setTimeout(() => {
+                btn.innerHTML = 'Send Message <i class="bx bx-send"></i>';
+                btn.style.background = '';
+                btn.style.borderColor = '';
+                this.reset();
+            }, 3000);
+        });
+
+        function toggleMenu() {
+            document.getElementById('navbar').classList.toggle('open');
+            document.getElementById('menuIcon').classList.toggle('open');
+        }
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navbar').classList.remove('open');
+                document.getElementById('menuIcon').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

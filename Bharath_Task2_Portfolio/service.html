@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Bharath Marupaka</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Bharath.</a>
+
+        <nav class="navbar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html" class="active">Service</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <section class="services">
+        <h2 class="heading">My <span>Services</span></h2>
+
+        <div class="services-container">
+
+            <div class="service-box">
+                <img src="https://varahasoftwaresolutions.com/images/web-development.png" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>I build fast, responsive, and scalable websites from scratch using modern technologies.
+                    Whether it's a landing page or a full web application, I've got you covered.</p>
+                <a href="contact.html" class="btn-read">Let's Talk <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+
+            <div class="service-box">
+                <img src="https://varahasoftwaresolutions.com/images/digital-marketing.png" alt="Digital Marketing">
+                <h3>Digital Marketing</h3>
+                <p>Grow your online presence with targeted digital marketing strategies — SEO, social media,
+                    email campaigns, and content that actually converts visitors into customers.</p>
+                <a href="contact.html" class="btn-read">Let's Talk <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+
+            <div class="service-box">
+                <img src="https://varahasoftwaresolutions.com/images/web-designing.png" alt="Web Designing">
+                <h3>Web Designing</h3>
+                <p>Beautiful, user-friendly designs that leave a lasting impression. I focus on clean layouts,
+                    intuitive navigation, and pixel-perfect visuals that represent your brand perfectly.</p>
+                <a href="contact.html" class="btn-read">Let's Talk <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+
+            <div class="service-box">
+                <img src="https://varahasoftwaresolutions.com/images/hosting.png" alt="Hosting Service">
+                <h3>Hosting Service</h3>
+                <p>Reliable, secure, and high-performance hosting solutions for your website. I help you
+                    get online smoothly with the right hosting plan for your needs and budget.</p>
+                <a href="contact.html" class="btn-read">Let's Talk <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+
+            <div class="service-box">
+                <img src="https://varahasoftwaresolutions.com/images/domain-registration.png" alt="Domain Registration">
+                <h3>Domain Registration</h3>
+                <p>Get the perfect domain name for your business. I help you search, register, and manage
+                    your domain so your brand stays unique and memorable online.</p>
+                <a href="contact.html" class="btn-read">Let's Talk <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navbar').classList.toggle('open');
+            document.getElementById('menuIcon').classList.toggle('open');
+        }
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navbar').classList.remove('open');
+                document.getElementById('menuIcon').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

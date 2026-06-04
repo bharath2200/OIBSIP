@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A beautiful and dynamic temperature converter supporting Celsius, Fahrenheit, and Kelvin.">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Temperature Converter</h1>
+        </div>
+
+        <div class="input-group">
+            <div class="input-box">
+                <label for="from-unit">From:</label>
+                <select id="from-unit">
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label for="to-unit">To:</label>
+                <select id="to-unit">
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label for="temperature">Temperature</label>
+                <input type="number" id="temperature" placeholder="Enter Temperature" autocomplete="off">
+            </div>
+
+            <button id="convert-btn">Convert</button>
+
+            <div class="input-box">
+                <label for="result">Result:</label>
+                <input type="text" id="result" readonly>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
