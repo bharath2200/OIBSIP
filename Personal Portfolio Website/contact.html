@@ -83,24 +83,20 @@
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
 
-            // Construct WhatsApp message
             const whatsappMessage = `*New Contact Form Message*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
             const whatsappNumber = "917330750100"; 
             const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-            // Open WhatsApp in new tab
             window.open(whatsappURL, '_blank');
 
-            // Button animation feedback
             const btn = this.querySelector('.btn-submit');
             btn.textContent = 'Redirecting to WhatsApp...';
-            btn.style.background = '#25D366'; // WhatsApp Green
+            btn.style.background = '#25D366';
             btn.style.borderColor = '#25D366';
             
             setTimeout(() => {
