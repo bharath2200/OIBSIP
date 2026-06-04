@@ -21,7 +21,6 @@ export class CommandPaletteModule {
         this.isOpen = false;
         this.selectedIdx = 0;
 
-        // Elements
         this.overlay = document.getElementById('palette-overlay');
         this.input = document.getElementById('palette-input');
         this.resultsBox = document.getElementById('palette-results');
@@ -32,7 +31,6 @@ export class CommandPaletteModule {
     init() {
         if (!this.overlay) return;
 
-        // 1. Listen for global hotkey Ctrl + K
         window.addEventListener('keydown', (e) => {
             if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                 e.preventDefault();
@@ -43,15 +41,10 @@ export class CommandPaletteModule {
             }
         });
 
-        // Click overlay background to close
         this.overlay.addEventListener('click', (e) => {
             if (e.target === this.overlay) this.close();
         });
-
-        // 2. Autocomplete search logic
         this.input.addEventListener('input', () => this.filterCommands());
-        
-        // 3. Arrow navigations and Enter select
         this.input.addEventListener('keydown', (e) => this.handleKeydown(e));
     }
 
@@ -102,7 +95,6 @@ export class CommandPaletteModule {
             const div = document.createElement('div');
             div.className = `palette-item ${idx === this.selectedIdx ? 'active' : ''}`;
             
-            // Icon mapping by category
             let icon = 'fa-terminal';
             if (cmd.category === 'navigation') icon = 'fa-arrow-turn-up';
             else if (cmd.category === 'timer') icon = 'fa-clock';
@@ -117,7 +109,6 @@ export class CommandPaletteModule {
                 <span class="palette-cmd-shortcut">${cmd.cmd}</span>
             `;
 
-            // Click listener
             div.addEventListener('click', () => {
                 cmd.action();
                 this.close();
@@ -126,7 +117,6 @@ export class CommandPaletteModule {
             this.resultsBox.appendChild(div);
         });
 
-        // Cache filtered list on object for index keydown tracking
         this.filteredCache = filtered;
     }
 
@@ -151,15 +141,12 @@ export class CommandPaletteModule {
         }
     }
 
-    /* Core Action Executors */
     switchPanel(tabName) {
-        // Find sidebar menu item and trigger switch
         const menuBtn = document.querySelector(`.sidebar-menu-item[data-tab="${tabName}"]`);
         if (menuBtn) menuBtn.click();
     }
 
     triggerTimer(action) {
-        // Toggle Pomodoro timer
         const timerPlayBtn = document.getElementById('timer-play-btn');
         const timerResetBtn = document.getElementById('timer-reset-btn');
         const timerPlayIcon = document.getElementById('timer-play-icon');
