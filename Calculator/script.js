@@ -27,14 +27,12 @@ class Calculator {
         }
         if (number === '.' && this.currentOperand.includes('.')) return;
         
-        // Remove initial 0 if a non-zero number is typed (unless it's a decimal point)
         if (this.currentOperand === '0' && number !== '.') {
             this.currentOperand = number.toString();
         } else {
             this.currentOperand = this.currentOperand.toString() + number.toString();
         }
         
-        // Prevent extremely long numbers
         if (this.currentOperand.length > 15) {
             this.currentOperand = this.currentOperand.slice(0, 15);
         }
@@ -81,7 +79,6 @@ class Calculator {
                 return;
         }
         
-        // Handle floating point precision issues
         computation = Math.round(computation * 100000000) / 100000000;
         
         this.currentOperand = computation.toString();
@@ -131,7 +128,6 @@ class Calculator {
     }
 }
 
-// Select all elements
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operator]');
 const equalsButton = document.querySelector('[data-action="evaluate"]');
@@ -142,10 +138,8 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
 
-// Add click animations and event listeners
 const addClickAnimation = (button) => {
     button.classList.remove('animate-press');
-    // Trigger reflow to restart animation
     void button.offsetWidth;
     button.classList.add('animate-press');
 };
@@ -184,7 +178,6 @@ deleteButton.addEventListener('click', button => {
     calculator.updateDisplay();
 });
 
-// Keyboard support
 document.addEventListener('keydown', e => {
     if (e.key >= 0 && e.key <= 9 || e.key === '.') {
         const btn = Array.from(numberButtons).find(b => b.innerText === e.key);
