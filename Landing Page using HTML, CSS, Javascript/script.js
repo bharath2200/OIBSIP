@@ -1,4 +1,3 @@
-// NAVBAR SHADOW
 window.addEventListener("scroll", () => {
     const nav = document.querySelector("nav");
     if (nav) {
@@ -10,7 +9,6 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// SIMPLE BUTTON EFFECT
 const buttons = document.querySelectorAll(".btn, button");
 buttons.forEach(btn => {
     btn.addEventListener("mouseenter", () => {
@@ -21,14 +19,13 @@ buttons.forEach(btn => {
     });
 });
 
-// IMAGE SWAP LOGIC
 const largeImage = document.querySelector('.large-pizza');
 const smallImages = document.querySelectorAll('.plate-wrapper img');
 
 if (largeImage && smallImages.length > 0) {
     smallImages.forEach(img => {
         img.addEventListener('click', () => {
-            // Add a small fade effect for smooth transition
+            
             largeImage.style.opacity = 0;
             setTimeout(() => {
                 const tempSrc = largeImage.src;
@@ -40,7 +37,6 @@ if (largeImage && smallImages.length > 0) {
     });
 }
 
-// MENU AND SEARCH TOGGLE LOGIC
 const menuIcon = document.querySelector('.fa-bars');
 const navEl = document.querySelector('nav');
 
