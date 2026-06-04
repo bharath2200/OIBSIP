@@ -1,13 +1,5 @@
-/**
- * LocalStorage Storage Helpers for FlowState
- */
-
 export const Storage = {
-    /**
-     * Get item from LocalStorage with fallback value
-     * @param {string} key 
-     * @param {any} fallback 
-     */
+   
     get(key, fallback = null) {
         try {
             const item = localStorage.getItem(`flowstate_${key}`);
@@ -18,11 +10,6 @@ export const Storage = {
         }
     },
 
-    /**
-     * Save item to LocalStorage
-     * @param {string} key 
-     * @param {any} value 
-     */
     set(key, value) {
         try {
             localStorage.setItem(`flowstate_${key}`, JSON.stringify(value));
@@ -33,10 +20,6 @@ export const Storage = {
         }
     },
 
-    /**
-     * Remove item from LocalStorage
-     * @param {string} key 
-     */
     remove(key) {
         try {
             localStorage.removeItem(`flowstate_${key}`);
