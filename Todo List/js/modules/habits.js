@@ -2,7 +2,6 @@ import { Storage } from '../utils/storage.js';
 
 export class HabitsModule {
     constructor() {
-        // Initialize habits with a weekly schedule (7 days)
         const defaultHabits = {
             coding: { name: 'Coding Session', icon: 'fa-code', color: 'blue', days: [false, false, false, false, false, false, false], streak: 0 },
             gym: { name: 'Gym / Fitness', icon: 'fa-dumbbell', color: 'red', days: [false, false, false, false, false, false, false], streak: 0 },
@@ -25,14 +24,9 @@ export class HabitsModule {
 
     toggleDay(habitKey, dayIndex) {
         this.habits[habitKey].days[dayIndex] = !this.habits[habitKey].days[dayIndex];
-        
-        // Recalculate streak
         this.calculateStreak(habitKey);
-
         Storage.set('habits', this.habits);
         this.render();
-
-        // Dispatch a custom event so the Analytics and Home widgets refresh automatically!
         document.dispatchEvent(new CustomEvent('habitsUpdated'));
     }
 
@@ -41,7 +35,6 @@ export class HabitsModule {
         let currentStreak = 0;
         let maxStreak = 0;
 
-        // Simple count of consecutive checked days
         for (let i = 0; i < days.length; i++) {
             if (days[i]) {
                 currentStreak++;
@@ -62,7 +55,6 @@ export class HabitsModule {
             const card = document.createElement('div');
             card.className = `habit-card border-${habit.color}`;
             
-            // Header
             let daysHtml = '';
             this.daysOfWeek.forEach((day, index) => {
                 const checked = habit.days[index] ? 'checked' : '';
@@ -98,7 +90,6 @@ export class HabitsModule {
                 </div>
             `;
 
-            // Bind checkbox events
             const checkboxes = card.querySelectorAll('input[type="checkbox"]');
             checkboxes.forEach(box => {
                 box.addEventListener('change', () => {
