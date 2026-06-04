@@ -115,7 +115,6 @@ body {
     height: 50px;
 }
 
-/* About page btn-box — same style, auto width */
 .about-content .btn-box {
     display: flex;
     justify-content: flex-start;
@@ -284,7 +283,6 @@ body {
     opacity: 0;
 }
 
-/* KEYFRAME ANIMATION */
 @keyframes showRight {
     100% {
         width: 0;
