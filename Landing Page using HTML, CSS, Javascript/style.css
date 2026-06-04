@@ -47,7 +47,6 @@ header {
 }
 
 .logo {
-    /* blue box */
     color: #ffffff;
     padding: 8px 12px;
     font-size: 23px;
@@ -65,7 +64,6 @@ nav {
     list-style: none;
     gap: 35px;
     margin-right: 50px;
-    /* shift a bit to left */
 }
 
 .nav-links li a {
@@ -306,7 +304,6 @@ nav {
 
     .yellow-bg {
         display: none;
-        /* Hide complex background on smaller screens */
     }
 
     header {
@@ -375,7 +372,6 @@ nav {
         height: 300px;
         margin-right: 0;
         margin: 0 auto;
-        /* Center on mobile */
     }
 
     .social-sidebar {
@@ -414,7 +410,6 @@ nav {
 
     .logo-text {
         color: white;
-        /* Make text visible on dark background */
     }
 }
 
@@ -437,7 +432,6 @@ nav {
     }
 }
 
-/* Search Box Styles */
 .search-box {
     position: absolute;
     top: 80px;
