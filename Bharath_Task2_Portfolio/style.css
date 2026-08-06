@@ -7,8 +7,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+body, html {
     color: #ededed;
+    overflow-x: hidden;
 }
 
 .header {
@@ -115,6 +116,11 @@ body {
     height: 50px;
 }
 
+.mobile-profile-pic {
+    display: none;
+}
+
+/* About page btn-box — same style, auto width */
 .about-content .btn-box {
     display: flex;
     justify-content: flex-start;
@@ -283,6 +289,7 @@ body {
     opacity: 0;
 }
 
+/* KEYFRAME ANIMATION */
 @keyframes showRight {
     100% {
         width: 0;
@@ -302,6 +309,8 @@ body {
 
     .home-content h1 {
         font-size: 48px;
+        white-space: normal;
+        width: auto;
     }
 
     .home-content h3 {
@@ -926,12 +935,28 @@ body {
 
     .home {
         padding: 0 5%;
-        background-position: right center;
+        background-position: left center;
+    }
+
+    .home-content {
+        margin-top: -120px;
     }
 
     .home-content h1 {
         font-size: 32px;
         white-space: normal;
+        width: auto;
+    }
+
+    .mobile-profile-pic {
+        display: block;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #00abf0;
+        margin: 0 auto 25px;
+        box-shadow: 0 0 15px rgba(0, 171, 240, 0.4);
     }
 
     .home-content h3 {
